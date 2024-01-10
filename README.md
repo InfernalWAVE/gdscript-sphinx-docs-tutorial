@@ -246,3 +246,6 @@ If it was successful, you should have an HTML project in your ```docs_test\build
 You should be able to open index.html in your browser, and browse your docs! That's it!
 
 ![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/9be17747-1653-42e1-866f-528f007eeccb)
+
+![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/c14c3063-8578-498a-bcd3-8b6244bd3e44)
+
