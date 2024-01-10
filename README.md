@@ -1,4 +1,4 @@
-![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/be1892ac-50ca-4a61-9775-36641c561b47)# what does this tutorial explain?
+# what does this tutorial explain?
 - how to generate HTML documentation using sphinx for gdscipt files
     - write documentation comments
     - export XML class references using --doctool --gdscript-docs
