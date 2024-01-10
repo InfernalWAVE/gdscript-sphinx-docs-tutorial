@@ -36,7 +36,7 @@ Finally, rename the godot executable to "godot.exe". This allows you to access c
 
 ![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/dc26a3e5-4336-4f33-be74-82f4f6476c27)
 
-You can verify this worked by running ```godot --version``` 
+You can verify this worked by running ```godot --version``` from the command line
 
 ## 3. Export XML Class References
 Now that that godot works over the command line, we will use the ```--doctool``` command to generate the XML files. ```--doctool``` is what is used to create the engine documentation, and by default will output an XML file for every class in the engine. However, if you use the ```--gdscript-docs``` command with it, it will output XML files only for gdscript files found at the path you provide.
