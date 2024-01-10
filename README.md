@@ -73,10 +73,43 @@ If it was successful, you should have an XML file for each script in your doc_ex
 
 ![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/b3815bb2-b973-4e66-97ac-52e1818ada0b)
 
-## 4. Generate RST Files
+## 4. Update make_rst.py Tool
 The XML files we generated in step 3 are "class references" for each script that we documented. We can use these class references to generate reStructuredText (RST) files using the make_rst python tool included in the engine source. The file itself can be found here: https://github.com/godotengine/godot/blob/master/doc/tools/make_rst.py
 
 However, in order to run the make_rst.py tool, you need to clone the whole godot repo. This is because make_rst.py depends on other parts of the repo, specifically the "import version".
 
 Additionally, we will need to make 2 adjustments to the make_rst.py script once the repo is downloaded. The adjusted file is also available in this repo if you would rather just replace it.
+
+Additionally, additionally, you will need python installed and added to your path. There are several tutorials for how to accomplish this online. You can verify your python is ready to use by running ```python --version``` from your command prompt:
+
+![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/f15d513b-d1ce-447a-bfad-5048f5dca952)
+
+Now that we have verified python is ready to use, we need to download the godot repo. You can do this using git, or you can go to the following link and click Code > Download Zip.
+https://github.com/godotengine/godot/tree/master
+
+![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/dee491e3-1523-4ba3-9179-346290ce2310)
+
+If you downloaded the .zip, extract the folder to a convenient location. For this example I will be using ```Documents\godot-source```
+
+![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/db75d826-6c16-42f8-8d30-e935cb67a722)
+
+Once the ```godot``` folder is extracted and ready, go to ```godot/doc/tools``` this is where the make_rst.py tool is that we need to modify. 
+
+![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/072e92a4-2d0f-4068-8aea-e51ee0f68b13)
+
+When the doctool generates the XML files for gdscript files, the names (and inherits from extended gdscripts) end up with quotation marks and relative filepath artifacts:
+
+![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/d145b67c-f813-4ff6-a43c-296c55957106)
+
+These weird strings cause errors when we try to run make_rst.py. So you can manually remove the characters, or we can modify the make_rst.py tool to clean the strings automatically as it parses the XML.
+
+Either replace make_rst.py with the file in this repo, or make the following changes to the file. The changes are to the ```parse_class``` method in the ```State``` class. :
+
+![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/10833132-6336-4bff-a25a-054a2413f3af)
+
+These changes just strip the illegal characters from the ```name``` and ```inherits``` attributes as it reads them from the XML. NOTE: THERE MAY BE A BETTER WAY TO DO THIS, IDK
+
+Either way, once the changes have been made, we are ready to use the script to generate the RST files!
+
+## 5. Generate RST Files
 
