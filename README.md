@@ -167,7 +167,7 @@ This isn't mandatory, but we will install the sphinx theme that godot uses as we
 
 We can install the ReadTheDocs theme with ```python -m pip install sphinx-rtd-theme```
 
-Once everything is installed, we can run the ```sphinx-quickstart``` command in the terminal to initialize the documentation project, follow the docs here: https://www.sphinx-doc.org/en/master/usage/quickstart.html
+Once everything is installed, we can run the ```sphinx-quickstart``` command in the command prompt to initialize the documentation project, follow the docs here: https://www.sphinx-doc.org/en/master/usage/quickstart.html
 
 
 
