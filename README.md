@@ -181,7 +181,7 @@ When you run the command, it will automatically select the folder you are curren
 
 ![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/58bf62b7-5089-4945-b0bb-821ac361d671)
 
-I choose yes to separate "source" and "build", but I honestly don't know if it matters. Then it will ask ask for a project name, author name, and release version:
+I choose yes to separate "source" and "build", this will create two separate folders for us to use for input and output in the root. Then it will ask ask for a project name, author name, and release version:
 
 ![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/5cc66d6e-52f6-43d0-adce-b29d1b724a0f)
 
@@ -224,4 +224,25 @@ When you add the files, windows will warn you that ```index.rst``` already exist
 Now that ```conf.py``` has been configured, and the source RST files have been added, we are ready to build the documentation!
 
 ## 7. Build Documentation
+From the command prompt, navigate to the ```docs_test``` folder:
 
+![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/71e591e9-b673-497d-9655-84df24327530)
+
+The command we are going to run is ```sphinx-build -M html <path1> <path2>``` where
+- ```sphinx-build -M html``` uses the sphinx-build tool to create HTML documentation using "make mode"
+- ```<path1>``` is the location sphinx-build will use as the input source
+- ```<path2>``` is the location sphinx-build will save the HTML documentation to
+
+So the final command is ```sphinx-build -M html source build```:
+
+![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/754e4ac6-1fa1-41ee-940e-acc47fc0d532)
+
+Don't worry about the warning(s)! I think they are related to the "unable to resolve type" errors earlier when we were generating the RST files, and it just depends on how many class references from the engine you want to include!
+
+If it was successful, you should have an HTML project in your ```docs_test\build\html``` folder:
+
+![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/b372c4da-a47f-4478-ae83-204e50f43bbb)
+
+You should be able to open index.html in your browser, and browse your docs! That's it!
+
+![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/9be17747-1653-42e1-866f-528f007eeccb)
