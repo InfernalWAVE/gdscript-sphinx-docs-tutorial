@@ -1,4 +1,4 @@
-# what does this tutorial explain?
+![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/be1892ac-50ca-4a61-9775-36641c561b47)# what does this tutorial explain?
 - how to generate HTML documentation using sphinx for gdscipt files
     - write documentation comments
     - export XML class references using --doctool --gdscript-docs
@@ -109,7 +109,44 @@ Either replace make_rst.py with the file in this repo, or make the following cha
 
 These changes just strip the illegal characters from the ```name``` and ```inherits``` attributes as it reads them from the XML. NOTE: THERE MAY BE A BETTER WAY TO DO THIS, IDK
 
-Either way, once the changes have been made, we are ready to use the script to generate the RST files!
+Either way, once the changes have been made, we are almost ready to generate the RST files!
 
 ## 5. Generate RST Files
+Before we begin, we need to set up folders for our inputs to and outputs from the make_rst.py tool. So navigate to the folder that contains make_rst.py:
 
+![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/960d6433-1914-4722-8a4e-a1502ec483ba)
+
+Create two folders in this location, one for input files and one for output files. For this example, I will be naming them ```doc_input``` and ```doc_output```:
+
+![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/04c983f3-3576-4267-946e-ed4751241e9d)
+
+Copy the XML class references we generated earlier into the ```doc_input``` folder
+
+![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/2bce3b2f-20fb-4953-89d5-fb5d7580a543)
+
+Okay, now we are finally ready to run this make_rst.py script!
+
+From the command prompt, navigate to the folder that contains make_rst.py:
+
+![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/fb435e85-ca8b-46d2-87a9-b24abf87ba5e)
+
+The command we are going to run is ```python make_rst.py <path1> --output <path2>```
+- ```python make_rst.py``` accesses python from the command line and executes the script
+- ```<path1``` tells the script where to scan for XML files as input
+- ```--output <path2>``` tells the script where to output the RST files it generates
+
+So for this example, the final command is ```python make_rst.py doc_input --output doc_output```:
+
+![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/df217cb7-ca96-40f8-9b06-dcf43863a27d)
+
+Don't panic about the errors! What is happening is that the script is trying to link to class references for things like ```Variant``` or ```float```, since those are types that were used in the scripts. If you want to, you can include class references for those items by grabbing the XML files from https://github.com/godotengine/godot/tree/master/doc/classes
+
+However, as you add class references from the engine, you will get more and more of these unresolved type errors. This is because the references you add make their own references to even more classes, and it is a kind of cascading effect. The only way to get the RST files to generate without error is to include literally all of the class references for the engine (which I did just to check, it works). The doc/classes section of the repo also does not contain all of the class references for the engine. Some of them are spread out, in their own doc_classes folder (like GridMap for example: https://github.com/godotengine/godot/blob/master/modules/gridmap/doc_classes/GridMap.xml).
+
+Anyways, if it was successful, you should have RST files in your ```doc_output``` folder:
+
+![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/8c41e43e-e043-4d95-b82f-db29e8d8468f)
+
+Congratulations if you made it this far! Now we just need to run these RST files through sphinx to get our documentation.
+
+# Install and Configure Sphinx
