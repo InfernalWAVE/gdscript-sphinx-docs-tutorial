@@ -58,11 +58,11 @@ Next, create a folder the XML files will be saved to. Here I made the folder ```
 
 ![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/f5a32f6b-f4ed-4d8c-8e07-ec406caaa90b)
 
-Next, open the command prompt and navigate to the folder that contains your scripts (Documents\Games\Godot\TestGrounds):
+Next, open the command prompt and navigate to the folder that contains your scripts (```Documents\Games\Godot\TestGrounds```):
 
 ![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/cf61435f-098b-4ad9-829c-40da345752d8)
 
-Finally, we can run our command,```godot --doctool <path1> --gdscript-docs <path2>``` where ```<path1>``` is "doc_export" and ```<path2>``` is the current directory, or "."
+Finally, we can run our command,```godot --doctool <path1> --gdscript-docs <path2>``` where ```<path1>``` is ```doc_export``` and ```<path2>``` is the current directory, or ```.```
 That means the final command, for the example, is ```godot --doctool doc_export --gdscript-docs .```
 
 ![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/ce7acd6a-a240-42c0-b3be-0d3b86024b58)
