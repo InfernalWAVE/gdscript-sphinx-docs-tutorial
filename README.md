@@ -73,6 +73,10 @@ If it was successful, you should have an XML file for each script in your doc_ex
 
 ![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/b3815bb2-b973-4e66-97ac-52e1818ada0b)
 
+If you have made it this far, you can use my other tool to view and export a simplified version of docs from the XML files directly: https://github.com/InfernalWAVE/gdscript-xml-docviewer
+
+For interactive docs, we will need to do a bit more.
+
 ## 4. Update make_rst.py Tool
 The XML files we generated in step 3 are "class references" for each script that we documented. We can use these class references to generate reStructuredText (RST) files using the make_rst python tool included in the engine source. The file itself can be found here: https://github.com/godotengine/godot/blob/master/doc/tools/make_rst.py
 
@@ -150,3 +154,21 @@ Anyways, if it was successful, you should have RST files in your ```doc_output``
 Congratulations if you made it this far! Now we just need to run these RST files through sphinx to get our documentation.
 
 # Install and Configure Sphinx
+
+Install sphinx according to their installation instructions: https://www.sphinx-doc.org/en/master/usage/installation.html
+
+Since we know python is ready to use in the command prompt, we can use pip to install it with ```python -m pip install sphinx```
+
+We will also need an extension for sphinx that the godot documentation expects, called sphinx-tabs: https://sphinx-tabs.readthedocs.io/en/latest/
+
+We can install sphinx-tabs with ```python -m pip install sphinx-tabs```
+
+This isn't mandatory, but we will install the sphinx theme that godot uses as well by ReadTheDocs: https://sphinx-themes.org/sample-sites/sphinx-rtd-theme/
+
+We can install the ReadTheDocs theme with ```python -m pip install sphinx-rtd-theme```
+
+Once everything is installed, we can run the ```sphinx-quickstart``` command in the terminal to initialize the documentation project, follow the docs here: https://www.sphinx-doc.org/en/master/usage/quickstart.html
+
+
+
+
