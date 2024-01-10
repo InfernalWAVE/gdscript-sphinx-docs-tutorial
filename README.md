@@ -45,8 +45,8 @@ Now that that godot works over the command line, we will use the ```--doctool```
 
 The full command we will run is ```godot --doctool <path1> --gdscript-docs <path2>```
 - ```godot``` accesses the godot command line tool
-- ```--doctool <path1>``` tells doctool to output the XML files to the location at <path1>
-- ```--gdscript-docs <path2>``` tells doctool to only generate XML files for scripts found in the location <path2>
+- ```--doctool <path1>``` tells doctool to output the XML files to the location at ```<path1>```
+- ```--gdscript-docs <path2>``` tells doctool to only generate XML files for scripts found in the location ```<path2>```
 
 <path1> and <path2> can be whatever you want them to be. but I will explain how I do it, to minimize confusing paths
 
