@@ -8,7 +8,7 @@
         - install extension
         - install theme
 
-
+![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/27725610-9646-4732-ac1b-182e4704911e)
 
 # tutorial
 
