@@ -54,7 +54,7 @@ First, navigate to whatever folder contains the scripts that you want to generat
 
 ![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/d212e760-d6fd-4207-802b-c8eeb5551fca)
 
-Next, create a folder the XML files will be saved to. Here I made the folder "doc_export":
+Next, create a folder the XML files will be saved to. Here I made the folder ```doc_export```:
 
 ![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/f5a32f6b-f4ed-4d8c-8e07-ec406caaa90b)
 
