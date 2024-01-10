@@ -153,7 +153,7 @@ Anyways, if it was successful, you should have RST files in your ```doc_output``
 
 Congratulations if you made it this far! Now we just need to run these RST files through sphinx to get our documentation.
 
-# Install and Configure Sphinx
+## 6. Install, Configure, and Initialize Sphinx
 
 Install sphinx according to their installation instructions: https://www.sphinx-doc.org/en/master/usage/installation.html
 
@@ -167,8 +167,61 @@ This isn't mandatory, but we will install the sphinx theme that godot uses as we
 
 We can install the ReadTheDocs theme with ```python -m pip install sphinx-rtd-theme```
 
-Once everything is installed, we can run the ```sphinx-quickstart``` command in the command prompt to initialize the documentation project, follow the docs here: https://www.sphinx-doc.org/en/master/usage/quickstart.html
+Once everything is installed, we need to make a directory for sphinx to work in. For this example it will be ```Documents\docs_test```:
 
+![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/9f2f735f-1d3f-40dd-b14f-5ee179b2819a)
 
+From the command prompt, navigate to this folder:
 
+![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/95a9149a-2064-4242-9f7d-33c602942c05)
+
+Run the ```sphinx-quickstart``` command in the command prompt to initialize the documentation project in the current folder, follow the docs here: https://www.sphinx-doc.org/en/master/usage/quickstart.html
+
+When you run the command, it will automatically select the folder you are currently in as the root folder, and begin asking you setup questions:
+
+![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/58bf62b7-5089-4945-b0bb-821ac361d671)
+
+I choose yes to separate "source" and "build", but I honestly don't know if it matters. Then it will ask ask for a project name, author name, and release version:
+
+![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/5cc66d6e-52f6-43d0-adce-b29d1b724a0f)
+
+I chose "gdscript-doc-tutorial", my name, and 0.0.1. Then it asks about a language:
+
+![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/5003183f-9223-415d-a024-1f79719923b9)
+
+Since I am writing this in English, and it defaults to English, I just hit enter. This finally initializes the project and creates some files in the ```docs_test``` folder:
+
+![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/240f6de0-24f4-46a9-b421-825bdd116c16)
+
+![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/1e8bd3d2-f473-4d07-a73b-fe00b0d47114)
+
+Before building our documentation, we need to enable the extension and theme that we installed earlier. To do this, we need to edit a file in ```docs_test\source```:
+
+![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/73f38ac1-1d84-45c8-b3e5-b41443eca81e)
+
+```conf.py``` defines configuration information for the documentation when sphinx goes to build it. So open ```conf.py``` in a text editor:
+
+![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/e870e2a8-27d7-488e-83fe-53b105098a69)
+
+When the project is initialized, it creates some basic templates for us to use in ```conf.py```. We will add the sphinx-tabs extension to the ```extensions``` array and we will add the theme in the ```html-theme``` variable. The updated file should look like the following:
+
+![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/56790505-fb0d-416c-85a1-ce90142478c5)
+
+The lines exactly are:
+
+```extensions = ['sphinx_tabs.tabs']```
+
+```html_theme = 'sphinx_rtd_theme'```
+
+Save the updated ```conf.py``` file.
+
+Now we need to add all of the RST files we generated earlier to the ```docs_test\source``` folder:
+
+![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/a8df1692-787a-470f-8dd0-2eb64ae8cc16)
+
+When you add the files, windows will warn you that ```index.rst``` already exists in the destination, just replace it. The make_rst.py tool created the index.rst we want earlier.
+
+Now that ```conf.py``` has been configured, and the source RST files have been added, we are ready to build the documentation!
+
+## 7. Build Documentation
 
