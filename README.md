@@ -50,7 +50,7 @@ The full command we will run is ```godot --doctool <path1> --gdscript-docs <path
 
 <path1> and <path2> can be whatever you want them to be. but I will explain how I do it, to minimize confusing paths
 
-First, navigate to whatever folder contains the scripts that you want to generate documentation for in your file explorer. For this example, I have all of the scripts in the project folder Documents\Games\Godot\TestGrounds:
+First, navigate to whatever folder contains the scripts that you want to generate documentation for in your file explorer. For this example, I have all of the scripts in the project folder ```Documents\Games\Godot\TestGrounds```:
 
 ![image](https://github.com/InfernalWAVE/gdscript-sphinx-docs-tutorial/assets/48569884/d212e760-d6fd-4207-802b-c8eeb5551fca)
 
